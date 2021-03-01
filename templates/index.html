@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Fonts -->
+        <link rel="stylesheet" href="{{url_for('static', filename='styles/fonts.css')}}">
+
+        <!-- CSS Reset -->
+        <link rel="stylesheet" href="{{url_for('static', filename='styles/normalize.css')}}">
+
+        <!-- Milligram CSS -->
+        <link rel="stylesheet" href="{{url_for('static', filename='styles/milligram.min.css')}}">
+        
+        <!-- Custom Stylesheet -->
+        <link rel="stylesheet" href="{{url_for('static', filename='styles/styles.css')}}">
+    </head>
+    <body>
+        <div id="wol-text-container">
+            <h4>Status</h4>
+            <h1>{{ status }}</h1>
+        </div>
+        <div id="wol-cta-container">
+            <a class="button" href="wake">Send Magic Packet</a>
+            <br>
+            <a href="ping">send ping</a>
+        </div>
+    </body>
+</html>
