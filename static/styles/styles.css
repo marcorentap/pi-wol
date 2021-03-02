@@ -4,3 +4,11 @@ body {
     margin-top: 10%;
     text-align: center;
 }
+
+#ping-status-success{
+    background-color: #00ff7f3d;
+}
+
+#ping-status-fail{
+    background-color: #ff000057;
+}
