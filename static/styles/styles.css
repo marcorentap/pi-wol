@@ -5,10 +5,10 @@ body {
     text-align: center;
 }
 
-#ping-status-success{
+#status-success{
     background-color: #00ff7f3d;
 }
 
-#ping-status-fail{
+#status-fail{
     background-color: #ff000057;
 }

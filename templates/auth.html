@@ -15,26 +15,15 @@
     </head>
     <body>
         <div id="wol-text-container">
-            <h4>Status</h4>
-            {% if status %}
-                <h1> {{ status }}</h1>
-            {% else %}
-                <h1> UNKNOWN </h1>
-            {% endif %}
+            <h4>Login</h4>
         </div>
 
-        <div id="wol-cta-container">
-            <a class="button" href="wake">Send Magic Packet</a>
-        </div>
-
-        {% if wol_status %}
-            {% if wol_status == "success" %}
-                <blockquote id="status-success"> Wake successful </blockquote>
-            {% endif %}
-
-            {% if wol_status == "fail" %}
-                <blockquote id="status-fail"> Wake failed </blockquote>
-            {% endif %}
-        {% endif %}
+        <form action="/wake" method="post">
+            <fieldset>
+                <label for="passwordField">Password</label>
+                <input type="password" id="passwordField" name="password">
+                <input class="button-primary" type="submit" value="Continue">
+            </fieldset>
+        </form>
      </body>
 </html>
