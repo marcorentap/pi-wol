@@ -40,15 +40,15 @@ Set environment variables:
 Unix, Linux, MacOS, etc.
 
 ```
-export FLASK_APP = remote_wol
-export FLASK_ENV = production
+export FLASK_APP="remote-wol.py"
+export FLASK_ENV="production"
 ```
 
 Windows
 
 ```
-set FLASK_APP = remote_wol
-set FLASK_ENV = production
+set FLASK_APP="remote-wol.py"
+set FLASK_ENV="production"
 ```
 
 ---
@@ -56,7 +56,7 @@ set FLASK_ENV = production
 Run the server:
 
 ```
-flask run --host=0.0.0.0
+python -m flask run --host 0.0.0.0
 ```
 
 Then enter the password. You will need this password every time you want to send a magic packet.
