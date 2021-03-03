@@ -5,15 +5,24 @@ from pythonping import ping
 from hashlib import sha256
 import sys
 
-app = Flask(__name__)
-app.secret_key = "13370x0539"
+passwordDigest = str(input("Enter password: ")).encode("utf-8")
+passwordDigest = sha256(password).hexdigest()
 
-TARGET_MAC_ADDRESS = "02:10:5C:6E:C6:70"
-TARGET_STATIC_IP  = "172.26.112.1"
-PASSWORD_FILE = "pass.txt"
+app = Flask(__name__)
+app.secret_key = "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
+
+CONFIG_FILE = "config.ini"
+
+TARGET_MAC_ADDRESS = ""
+TARGET_STATIC_IP  = ""
+
+with open(CONFIG_FILE) as f:
+    TARGET_MAC_ADDRESS = f.readline()[:-1]
+    TARGET_STATIC_IP = f.readline()
 
 @app.route('/')
 def main_page():
+    print("Mac address is {}\nStatic IP is {}".format(TARGET_MAC_ADDRESS, TARGET_STATIC_IP), file=sys.stderr)
     wol_status = ""
     status = ""
 
@@ -55,12 +64,7 @@ def authenticate_user(inputPassword):
     hashedInput = sha256(inputPassword)
     hashedDigest = hashedInput.hexdigest()
 
-    storedDigest = ""
-    with open(PASSWORD_FILE) as file:
-        storedDigest = file.read()
-
-    print("Input: {}\nStored: {}".format(hashedDigest, storedDigest), file=sys.stderr)
-    if storedDigest == hashedDigest:
+    if passwordDigest == hashedDigest:
         return True
     else:
         return False

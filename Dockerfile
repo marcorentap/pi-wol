@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3.9-slim-buster
 
 ENV FLASK_APP "remote-wol.py"
 ENV FLASK_ENV "development"
