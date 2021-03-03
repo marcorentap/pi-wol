@@ -5,8 +5,6 @@ from pythonping import ping
 from hashlib import sha256
 import sys
 
-passwordDigest = str(input("Enter password: ")).encode("utf-8")
-passwordDigest = sha256(password).hexdigest()
 
 app = Flask(__name__)
 app.secret_key = "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
@@ -19,6 +17,9 @@ TARGET_STATIC_IP  = ""
 with open(CONFIG_FILE) as f:
     TARGET_MAC_ADDRESS = f.readline()[:-1]
     TARGET_STATIC_IP = f.readline()
+
+passwordDigest = str(input("Enter password: "))
+passwordDigest = sha256(passwordDigest.encode("utf-8")).hexdigest()
 
 @app.route('/')
 def main_page():
