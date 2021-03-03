@@ -64,3 +64,7 @@ Then enter the password. You will need this password every time you want to send
 ---
 
 You can now go to `http://[pi-wol machine's local IP]:5000` to access the web interface.
+
+## Remote Access
+
+You can use tunneling software like ngrok or plain ssh tunneling to allow π-WoL to be accessed remotely.
