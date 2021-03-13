@@ -2,6 +2,8 @@
 
 A Flask-based web application that lets you send magic packets to a target machine from the browser.
 
+![main-page](https://i.imgur.com/yqoxMPL.png)
+
 ## Usage
 
 ### Setup target machine
