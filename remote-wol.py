@@ -16,7 +16,7 @@ TARGET_STATIC_IP  = ""
 
 with open(CONFIG_FILE) as f:
     TARGET_MAC_ADDRESS = f.readline()[:-1]
-    TARGET_STATIC_IP = f.readline()
+    TARGET_STATIC_IP = f.readline()[:-1]
 
 passwordDigest = str(input("Enter password: "))
 passwordDigest = sha256(passwordDigest.encode("utf-8")).hexdigest()
